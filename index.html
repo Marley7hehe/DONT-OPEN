@@ -6,7 +6,6 @@
 
     <style>
         body {
-            margin: 0;
             background: black;
             color: #00ff00;
             font-family: monospace;
@@ -14,58 +13,55 @@
             padding-top: 150px;
         }
 
-        input {
-            background: black;
-            color: #00ff00;
-            border: 2px solid #00ff00;
-            padding: 12px;
+        button, input {
             font-family: monospace;
             font-size: 18px;
+            padding: 12px;
+            margin: 5px;
         }
 
         button {
             background: #00ff00;
             color: black;
             border: none;
-            padding: 12px 20px;
-            margin-left: 5px;
-            font-family: monospace;
-            font-weight: bold;
             cursor: pointer;
         }
 
-        #message {
-            display: none;
-            margin-top: 40px;
+        input {
+            background: black;
+            color: #00ff00;
+            border: 2px solid #00ff00;
         }
 
-        h1 {
-            font-size: 60px;
+        #codeBox {
+            display: none;
         }
     </style>
 </head>
 
 <body>
 
-    <h2>ENTER ACCESS CODE</h2>
+    <h1>⚠️ WARNING ⚠️</h1>
 
-    <input type="password" id="code" placeholder="Code eingeben">
-    <button onclick="checkCode()">ENTER</button>
+    <button onclick="showCode()">DONT OPEN</button>
 
-    <div id="message">
-        <h1>YOU GOT HACKED</h1>
-        <p>Access granted.</p>
-        <a href="https://github.com/Marley7hehe/ERROR.git" target="_blank">
-            Nachricht öffnen
-        </a>
+    <div id="codeBox">
+        <h2>ENTER ACCESS CODE</h2>
+
+        <input type="password" id="code" placeholder="Code eingeben">
+        <button onclick="checkCode()">ENTER</button>
     </div>
 
     <script>
+        function showCode() {
+            document.getElementById("codeBox").style.display = "block";
+        }
+
         function checkCode() {
             const code = document.getElementById("code").value;
 
             if (code === "ä231434116263245432524365724343") {
-                document.getElementById("message").style.display = "block";
+                window.location.href = "https://github.com/Marley7hehe/ERROR.git";
             } else {
                 alert("FALSCHER CODE!");
             }
